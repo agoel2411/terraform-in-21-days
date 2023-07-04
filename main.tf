@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public0" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.0.0/24"
-  
+
   tags = {
     Name = "public0"
   }
@@ -51,7 +51,7 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_eip" "nat0" {
-  vpc   = true
+  vpc = true
 
   tags = {
     Name = "nat0"
@@ -59,7 +59,7 @@ resource "aws_eip" "nat0" {
 }
 
 resource "aws_eip" "nat1" {
-  vpc   = true
+  vpc = true
 
   tags = {
     Name = "nat1"
